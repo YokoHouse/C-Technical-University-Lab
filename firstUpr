@@ -12,6 +12,10 @@ public:
 		cout << "New Car:" << this->make << "" << this->model << endl;
 	}
 
+	~Car() {
+		cout << "Delete Car :" << this->make << "" << this->model << endl;
+	}
+
 	void PrintCarSpec() {
 		cout << "Make : " << this->make << endl;
 		cout << "Model : " << this->model << endl;
@@ -34,9 +38,13 @@ protected:
 int main() {
 	Car car1("VW", "Golf", "black", 1987, false, 500);
 	Car car2("Ford", "Model T", "black", 1932, true, 300000);
+	Car* car3= new Car("Tesla", "3", "white");
 
 	car1.PrintCarSpec();
 	car2.PrintCarSpec();
+	car3->PrintCarSpec();
+
+	delete car3;
 
 	cout << "Hello World!" << endl;
 	return 0;
